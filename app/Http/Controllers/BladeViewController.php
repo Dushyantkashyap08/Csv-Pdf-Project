@@ -12,14 +12,14 @@ class BladeViewController extends Controller
     }
     public function viewChangePassword()
     {
-        return view('changePassword');
+        return view('change-password');
     }
     public function viewUploadCSV()
     {
-        return view('uploadCSV');
+        return view('upload-csv');
     }
     public function viewUploadImage()
     {
-        return view('uploadImage');
+        return view('upload-image');
     }
 }

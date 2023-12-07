@@ -13,3 +13,4 @@
 <!--layouts.footer starts here-->
 @include('layouts.footer')
 <!--layouts.footer ends here-->
+

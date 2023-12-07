@@ -26,6 +26,7 @@ class AdminLoginController extends Controller
     
             if ($user && $user->password === $credentials['password']) {
     
+                Session::put('admin_session','loggedIn');
                 // Authentication successful
                 Auth::login($user);
                 return redirect()->intended('csv');

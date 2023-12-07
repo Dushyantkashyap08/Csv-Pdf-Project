@@ -1,3 +1,4 @@
+
 <!--extending layouts.main here-->
 @extends('layouts.main') 
 
@@ -58,10 +59,10 @@
 		</div>
 		<!--col-md-10 ends here-->
 	</aside>
-	@endsection
-	<!--section ends here-->
-
-	@section('script')
+@endsection
+<!--section ends here-->
+	
+@section('script')
 	<!--script starts here-->
 	<script>
 		function setAction(type) {
@@ -76,4 +77,4 @@
 		}
 	</script>
 	<!--script ends here-->
-	@endsection
+@endsection

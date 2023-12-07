@@ -6,6 +6,7 @@ use App\Http\Controllers\BladeViewController;
 use App\Http\Controllers\CsvUploadController;
 use App\Http\Controllers\PdfConverterController;
 use App\Http\Controllers\ImageZipConverter;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,16 +19,20 @@ use App\Http\Controllers\ImageZipConverter;
 */
 
 /*--BladeViewConroller Routes ----------*/
-Route::get('/',[BladeViewController::class,'viewLoginPage']);
-Route::get('/csv',[BladeViewController::class,'viewUploadCSV']);
-Route::get('/image',[BladeViewController::class,'viewUploadimage']);
-Route::get('/changepassword',[BladeViewController::class,'viewChangePassword']);
+Route::group(['controller' => BladeViewController::class], function () {
+    Route::get('/', 'viewLoginPage');
+    Route::get('/csv', 'viewUploadCSV');
+    Route::get('/image', 'viewUploadimage');
+    Route::get('/changepassword', 'viewChangePassword');
+});
 
 
 /*--AdminLoginConroller Routes ----------*/
-Route::post('/login-sumbission', [AdminLoginController::class,'loginUser'])->name('login-submission');
-Route::get('/logout',[AdminLoginController::class,'logout']);
-Route::post('/change-Password', [AdminLoginController::class,'changePassword'])->name('change-Password');
+Route::group(['controller' => AdminLoginController::class], function () {
+    Route::post('/login-sumbission', 'loginUser')->name('login-submission');
+    Route::get('/logout', 'logout');
+    Route::post('/change-Password', 'changePassword')->name('change-Password');
+});
 
 /*--CsvUploadController Routes ----------*/
 Route::post('/upload-csv', [CsvUploadController::class,'uploadCSV'])->name('upload-csv');
