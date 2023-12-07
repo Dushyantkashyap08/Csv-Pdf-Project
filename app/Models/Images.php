@@ -9,6 +9,8 @@ class Images extends Model
 {
     use HasFactory;
 
-    protected $table = 'Images';
-    protected $timestamps = false;
+    protected $table = 'images';
+    public $timestamps = false;
+
+    protected $fillable = ['sku_code', 'image'];
 }

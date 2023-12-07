@@ -7,6 +7,7 @@
     @yield('uploadCSV')
     @yield('uploadImage')
     @yield('changePassword')
+    @yield('script')
     <!--yield section ends here-->
 
 <!--layouts.footer starts here-->
